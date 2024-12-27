@@ -1,0 +1,81 @@
+@model gesCommandes.Models.Produit
+
+@{
+    Layout = "_Layout";
+}
+<div class="w-full mt-10 px-4">
+    <div class="flex justify-center">
+        <div class="w-full ">
+            <div class="bg-green-600 text-white shadow-lg rounded-xl overflow-hidden border-4 border-indigo-700">
+                <div class="px-6 py-4 flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h11M9 21V3m0 0l7.5 7.5M9 3l-7.5 7.5" />
+                    </svg>
+                    <h4 class="text-xl font-bold">Create Product</h4>
+                </div>
+                <div class="bg-white text-gray-800 p-6 rounded-b-xl w-full">
+                    <form asp-action="save" enctype="multipart/form-data">
+                        <div asp-validation-summary="ModelOnly" class="bg-red-100 text-red-700 p-4 rounded mb-4 border border-red-400"></div>
+
+                        <div class="mb-4">
+                            <label asp-for="Libelle" class="block text-sm font-medium text-gray-700">Product Name</label>
+                            <div class="flex items-center border border-gray-300 rounded-lg">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500 mr-2 pl-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16l-4-4m0 0l4-4m-4 4h16" />
+                                </svg>
+                                <input asp-for="Libelle" class="flex-1 mt-1 block w-full rounded-lg border-0 focus:ring-0" placeholder="Enter product name" />
+                            </div>
+                            <span asp-validation-for="Libelle" class="text-red-500 text-sm"></span>
+                        </div>
+
+                        <div class="mb-4">
+                            <label asp-for="Prix" class="block text-sm font-medium text-gray-700">Price</label>
+                            <div class="flex items-center border border-gray-300 rounded-lg">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500 mr-2 pl-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1 4h2m-2-4V9m0 7V4m6 16H6a2 2 0 01-2-2V6a2 2 0 012-2h12a2 2 0 012 2v12a2 2 0 01-2 2z" />
+                                </svg>
+                                <input asp-for="Prix" type="number" class="flex-1 mt-1 block w-full rounded-lg border-0 focus:ring-0" placeholder="Enter price" />
+                            </div>
+                            <span asp-validation-for="Prix" class="text-red-500 text-sm"></span>
+                        </div>
+
+                        <div class="mb-4">
+                            <label asp-for="QteStock" class="block text-sm font-medium text-gray-700">Stock Quantity</label>
+                            <div class="flex items-center border border-gray-300 rounded-lg">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500 mr-2 pl-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16m-7 4h7" />
+                                </svg>
+                                <input asp-for="QteStock" type="number" class="flex-1 mt-1 block w-full rounded-lg border-0 focus:ring-0" placeholder="Enter stock quantity" />
+                            </div>
+                            <span asp-validation-for="QteStock" class="text-red-500 text-sm"></span>
+                        </div>
+
+                        <div class="mb-4">
+                            <label asp-for="ImgFile" class="block text-sm font-medium text-gray-700">Product Image</label>
+                            <div class="flex items-center border border-gray-300 rounded-lg">
+                                <input asp-for="ImgFile" type="file" class="flex-1  block w-full text-sm rounded-lg text-gray-500 border-0 focus:ring-0 cursor-pointer" />
+                            </div>
+                            <span asp-validation-for="ImgFile" class="text-red-500 text-sm"></span>
+                        </div>
+
+                        <div class="flex justify-between items-center mt-6">
+                            
+                            <a asp-action="Index" class="bg-gray-500 text-white px-6 py-2 rounded-full shadow-lg hover:bg-gray-600 transition-transform transform hover:scale-105">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                                </svg>
+                                Back to List
+                            </a>
+                            <button type="submit" class="bg-green-600 text-white px-6 py-2 rounded-full shadow-lg hover:bg-indigo-600 transition-transform transform hover:scale-105">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                Create
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

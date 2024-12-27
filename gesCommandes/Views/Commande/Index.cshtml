@@ -1,0 +1,47 @@
+@model IEnumerable<gesCommandes.Models.Commande>
+
+@{
+    Layout = "_Layout";
+    var commandes = ViewBag.commandes as List<Commande>;
+}
+
+<div class="rounded-lg w-full h-auto p-5 bg-transparent">
+    <div class="flex justify-between items-center mb-6">
+        <h1 class="text-2xl font-bold text-greenMe">All Commandes</h1>
+    </div>
+    <table class="w-full bg-white rounded-lg shadow-md overflow-hidden">
+        <thead class="bg-green-500 text-white">
+            <tr>
+                <th class="py-2 px-4">Nom</th>
+                <th class="py-2 px-4">Date</th>
+                <th class="py-2 px-4">Total</th>
+                <th class="py-2 px-4">Actions</th>
+            </tr>
+        </thead>
+        @if (commandes != null && commandes.Any())
+        {
+            <tbody>
+                @foreach (var item in commandes)
+                {
+                    <tr class="text-center">
+                        <td class="border-t py-2 px-4">@item.client.user.Nom</td>
+                        <td class="border-t py-2 px-4">@item.CreatedAt.ToString("d/M/y")</td>
+                        <td class="border-t py-2 px-4">@item.montantCommande</td>
+                        <td class="border-t py-2 px-4 space-x-2">
+                            <a href="@Url.Action("Details", new { id = item.Id })" class="text-green-500 hover:underline">Details</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        }
+        else
+        {
+            <tbody>
+                <tr>
+                    <td colspan="4" class="text-center py-4 text-gray-600">No commandes found.</td>
+                </tr>
+            </tbody>
+        }
+    </table>
+</div>
+

@@ -1,0 +1,80 @@
+@model IEnumerable<gesCommandes.Models.Client>
+
+@{
+    Layout = "_Layout";
+    var clients = ViewBag.Clients as List<Client>;
+}
+
+<div class="rounded-lg w-full h-auto p-5 ">
+    <div class="flex justify-between items-center mb-6">
+        <h1 class="text-2xl font-bold text-greenMe">Clients</h1>
+        <a href="@Url.Action("Create")" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">
+            Create New
+        </a>
+    </div>
+    <table class="w-full bg-white rounded-lg shadow-md overflow-hidden">
+        <thead class="bg-green-500 text-white">
+            <tr>
+
+                <th class="py-2 px-4">Img</th>
+                <th class="py-2 px-4">Solde</th>
+                <th class="py-2 px-4">Adresse</th>
+                <th class="py-2 px-4">UserID</th>
+                <th class="py-2 px-4">Actions</th>
+            </tr>
+        </thead>
+        @if (clients != null && clients.Any())
+        {
+            <tbody>
+                @foreach (var client in clients)
+                {
+                    <tr class="text-center">
+                        @if (client.user != null && client.user.Id != null)
+                        {
+                            <td class="border-t p-4 w-auto h-auto  flex items-center justify-center">
+                                <div class="w-12 h-12 rounded-full bg-yellow-100 p-1 flex items-center justify-center">
+                                    <img src="@(client.user.ImgPath != null ? client.user.ImgPath : "/imgs/users/default2.png")"
+                                        alt="No image Here" class="object-fit w-full h-full rounded-full ">
+
+                                </div>
+                            </td>
+                        }
+                        else
+                        {
+                            <td class="border-t p-4 w-auto h-auto bg-greenMe flex items-center justify-center">
+                                <div class="w-12 h-12 rounded-full bg-yellow-100 p-1 flex items-center justify-center">
+                                    <img src="/imgs/users/default2.png"
+                                        alt="No image Here" class="object-fit w-full h-full rounded-full ">
+
+                                </div>
+                            </td>
+                        }
+                        <td class="border-t py-2 px-4">@client.Solde</td>
+                        <td class="border-t py-2 px-4">@client.Adresse</td>
+                        @if (client.user != null && client.user.Id != null)
+                        {
+                            <td class="border-t py-2 px-4">@client.user.Id</td>
+                        }
+                        else
+                        {
+                            <td class="border-t py-2 px-4">No User</td>
+                        }
+                        <td class="border-t py-2 px-4 space-x-2">
+                            <a href="@Url.Action("Edit", new { id = client.Id })" class="text-blue-500 hover:underline">Edit</a>
+                            <a href="@Url.Action("Delete", new { id = client.Id })"
+                                class="text-red-500 hover:underline">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        }
+        else
+        {
+            <tbody>
+                <tr>
+                    <td colspan="4" class="text-center py-4 text-gray-600">No clients found.</td>
+                </tr>
+            </tbody>
+        }
+    </table>
+</div>

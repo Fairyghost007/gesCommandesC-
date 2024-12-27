@@ -1,0 +1,64 @@
+@{
+    var client = ViewBag.Client as Client;
+    var userOrders = ViewBag.UserOrders as List<Commande>;
+}
+
+@{
+    Layout = "_Layout";
+}
+
+
+<div class=" rounded-lg  w-full h-auto p-5 ">
+    @* <p>
+        <a asp-action="CreateCommande" asp-controller="Client" asp-route-clientId="@client.Id"
+            class="text-green-600 hover:underline">Create Commande</a>
+    </p> *@
+    @* <div class="rounded-lg w-full bg-purple-500 mt-5 h-auto "> *@
+        <table class="w-full bg-white  rounded-lg shadow-md overflow-hidden">
+            <thead class="bg-green-500 text-white rounded-lg">
+                <tr>
+                    <th class="py-2 px-4">Id</th>
+                    <th class="py-2 px-4">Date</th>
+                    <th class="py-2 px-4">Montant</th>
+                    <th class="py-2 px-4">Client</th>
+                    <th class="py-2 px-4">Livreur</th>
+                    <th class="py-2 px-4">Paiement</th>
+                    <th class="py-2 px-4">Actions</th>
+                </tr>
+            </thead>
+            @if (userOrders != null && ((List<Commande>)userOrders).Any())
+            {
+                <tbody>
+                    @foreach (var order in userOrders)
+                    {
+                        <tr class="">
+                            <td class="border-t py-2 px-4 text-center">@order.Id</td>
+                            <td class="border-t py-2 px-4 text-center">@order.CreatedAt.ToString("d/M/y")</td>
+                            <td class="border-t py-2 px-4 text-center">@order.montantCommande</td>
+                            <td class="border-t py-2 px-4 text-center">@order.clientId</td>
+                            <td class="border-t py-2 px-4 text-center">
+                                @(order.livreurId.HasValue ? order.livreurId.ToString() : "Not assign")
+                            </td>
+                            <td class="border-t py-2 px-4 text-center">
+                                @(order.paiementId.HasValue ? order.paiementId.ToString() : "No payment")
+                            </td>
+                            <td class="border-t py-2 px-4 text-center">
+                                <a asp-action="DetailCommandes" asp-controller="Client" asp-route-commandeId="@order.Id"
+                                    class="text-green-600 hover:underline">Details</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            }
+            else
+            {
+                <tbody>
+                    <tr>
+                        <td colspan="7" class="text-center py-4 text-gray-600">No orders found for this client.</td>
+                    </tr>
+                </tbody>
+            }
+        </table>
+    @* </div> *@
+
+</div>

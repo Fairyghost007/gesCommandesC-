@@ -1,0 +1,309 @@
+{
+  "Files": [
+    {
+      "Id": "/Users/macpro/Documents/gesCommandes/gesCommandes/obj/Debug/net8.0/scopedcss/projectbundle/gesCommandes.bundle.scp.css",
+      "PackagePath": "staticwebassets/gesCommandes.bundle.scp.css"
+    },
+    {
+      "Id": "/Users/macpro/Documents/gesCommandes/gesCommandes/wwwroot/css/output.css",
+      "PackagePath": "staticwebassets/css/output.css"
+    },
+    {
+      "Id": "/Users/macpro/Documents/gesCommandes/gesCommandes/wwwroot/css/site.css",
+      "PackagePath": "staticwebassets/css/site.css"
+    },
+    {
+      "Id": "/Users/macpro/Documents/gesCommandes/gesCommandes/wwwroot/favicon_io/about.txt",
+      "PackagePath": "staticwebassets/favicon_io/about.txt"
+    },
+    {
+      "Id": "/Users/macpro/Documents/gesCommandes/gesCommandes/wwwroot/favicon_io/android-chrome-192x192.png",
+      "PackagePath": "staticwebassets/favicon_io/android-chrome-192x192.png"
+    },
+    {
+      "Id": "/Users/macpro/Documents/gesCommandes/gesCommandes/wwwroot/favicon_io/android-chrome-512x512.png",
+      "PackagePath": "staticwebassets/favicon_io/android-chrome-512x512.png"
+    },
+    {
+      "Id": "/Users/macpro/Documents/gesCommandes/gesCommandes/wwwroot/favicon_io/apple-touch-icon.png",
+      "PackagePath": "staticwebassets/favicon_io/apple-touch-icon.png"
+    },
+    {
+      "Id": "/Users/macpro/Documents/gesCommandes/gesCommandes/wwwroot/favicon_io/favicon-16x16.png",
+      "PackagePath": "staticwebassets/favicon_io/favicon-16x16.png"
+    },
+    {
+      "Id": "/Users/macpro/Documents/gesCommandes/gesCommandes/wwwroot/favicon_io/favicon-32x32.png",
+      "PackagePath": "staticwebassets/favicon_io/favicon-32x32.png"
+    },
+    {
+      "Id": "/Users/macpro/Documents/gesCommandes/gesCommandes/wwwroot/favicon_io/favicon.ico",
+      "PackagePath": "staticwebassets/favicon_io/favicon.ico"
+    },
+    {
+      "Id": "/Users/macpro/Documents/gesCommandes/gesCommandes/wwwroot/favicon_io/site.webmanifest",
+      "PackagePath": "staticwebassets/favicon_io/site.webmanifest"
+    },
+    {
+      "Id": "/Users/macpro/Documents/gesCommandes/gesCommandes/wwwroot/imgs/produits/d6bd8888-7f36-4842-ae09-2373fe2a87e1_tshrt.png",
+      "PackagePath": "staticwebassets/imgs/produits/d6bd8888-7f36-4842-ae09-2373fe2a87e1_tshrt.png"
+    },
+    {
+      "Id": "/Users/macpro/Documents/gesCommandes/gesCommandes/wwwroot/imgs/produits/default.png",
+      "PackagePath": "staticwebassets/imgs/produits/default.png"
+    },
+    {
+      "Id": "/Users/macpro/Documents/gesCommandes/gesCommandes/wwwroot/imgs/users/default2.png",
+      "PackagePath": "staticwebassets/imgs/users/default2.png"
+    },
+    {
+      "Id": "/Users/macpro/Documents/gesCommandes/gesCommandes/wwwroot/js/site.js",
+      "PackagePath": "staticwebassets/js/site.js"
+    },
+    {
+      "Id": "/Users/macpro/Documents/gesCommandes/gesCommandes/wwwroot/lib/bootstrap/LICENSE",
+      "PackagePath": "staticwebassets/lib/bootstrap"
+    },
+    {
+      "Id": "/Users/macpro/Documents/gesCommandes/gesCommandes/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.css"
+    },
+    {
+      "Id": "/Users/macpro/Documents/gesCommandes/gesCommandes/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.css.map"
+    },
+    {
+      "Id": "/Users/macpro/Documents/gesCommandes/gesCommandes/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.min.css"
+    },
+    {
+      "Id": "/Users/macpro/Documents/gesCommandes/gesCommandes/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "/Users/macpro/Documents/gesCommandes/gesCommandes/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "/Users/macpro/Documents/gesCommandes/gesCommandes/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "/Users/macpro/Documents/gesCommandes/gesCommandes/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "/Users/macpro/Documents/gesCommandes/gesCommandes/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "/Users/macpro/Documents/gesCommandes/gesCommandes/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.css"
+    },
+    {
+      "Id": "/Users/macpro/Documents/gesCommandes/gesCommandes/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "/Users/macpro/Documents/gesCommandes/gesCommandes/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "/Users/macpro/Documents/gesCommandes/gesCommandes/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "/Users/macpro/Documents/gesCommandes/gesCommandes/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "/Users/macpro/Documents/gesCommandes/gesCommandes/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "/Users/macpro/Documents/gesCommandes/gesCommandes/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "/Users/macpro/Documents/gesCommandes/gesCommandes/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "/Users/macpro/Documents/gesCommandes/gesCommandes/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.css"
+    },
+    {
+      "Id": "/Users/macpro/Documents/gesCommandes/gesCommandes/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "/Users/macpro/Documents/gesCommandes/gesCommandes/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "/Users/macpro/Documents/gesCommandes/gesCommandes/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "/Users/macpro/Documents/gesCommandes/gesCommandes/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "/Users/macpro/Documents/gesCommandes/gesCommandes/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "/Users/macpro/Documents/gesCommandes/gesCommandes/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "/Users/macpro/Documents/gesCommandes/gesCommandes/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "/Users/macpro/Documents/gesCommandes/gesCommandes/wwwroot/lib/bootstrap/dist/css/bootstrap.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.css"
+    },
+    {
+      "Id": "/Users/macpro/Documents/gesCommandes/gesCommandes/wwwroot/lib/bootstrap/dist/css/bootstrap.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.css.map"
+    },
+    {
+      "Id": "/Users/macpro/Documents/gesCommandes/gesCommandes/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.min.css"
+    },
+    {
+      "Id": "/Users/macpro/Documents/gesCommandes/gesCommandes/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.min.css.map"
+    },
+    {
+      "Id": "/Users/macpro/Documents/gesCommandes/gesCommandes/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.rtl.css"
+    },
+    {
+      "Id": "/Users/macpro/Documents/gesCommandes/gesCommandes/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "/Users/macpro/Documents/gesCommandes/gesCommandes/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "/Users/macpro/Documents/gesCommandes/gesCommandes/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "/Users/macpro/Documents/gesCommandes/gesCommandes/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.bundle.js"
+    },
+    {
+      "Id": "/Users/macpro/Documents/gesCommandes/gesCommandes/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "/Users/macpro/Documents/gesCommandes/gesCommandes/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "/Users/macpro/Documents/gesCommandes/gesCommandes/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "/Users/macpro/Documents/gesCommandes/gesCommandes/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.js",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.esm.js"
+    },
+    {
+      "Id": "/Users/macpro/Documents/gesCommandes/gesCommandes/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.esm.js.map"
+    },
+    {
+      "Id": "/Users/macpro/Documents/gesCommandes/gesCommandes/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.esm.min.js"
+    },
+    {
+      "Id": "/Users/macpro/Documents/gesCommandes/gesCommandes/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "/Users/macpro/Documents/gesCommandes/gesCommandes/wwwroot/lib/bootstrap/dist/js/bootstrap.js",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.js"
+    },
+    {
+      "Id": "/Users/macpro/Documents/gesCommandes/gesCommandes/wwwroot/lib/bootstrap/dist/js/bootstrap.js.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.js.map"
+    },
+    {
+      "Id": "/Users/macpro/Documents/gesCommandes/gesCommandes/wwwroot/lib/bootstrap/dist/js/bootstrap.min.js",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.min.js"
+    },
+    {
+      "Id": "/Users/macpro/Documents/gesCommandes/gesCommandes/wwwroot/lib/bootstrap/dist/js/bootstrap.min.js.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.min.js.map"
+    },
+    {
+      "Id": "/Users/macpro/Documents/gesCommandes/gesCommandes/wwwroot/lib/jquery-validation-unobtrusive/LICENSE.txt",
+      "PackagePath": "staticwebassets/lib/jquery-validation-unobtrusive/LICENSE.txt"
+    },
+    {
+      "Id": "/Users/macpro/Documents/gesCommandes/gesCommandes/wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "/Users/macpro/Documents/gesCommandes/gesCommandes/wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "/Users/macpro/Documents/gesCommandes/gesCommandes/wwwroot/lib/jquery-validation/LICENSE.md",
+      "PackagePath": "staticwebassets/lib/jquery-validation/LICENSE.md"
+    },
+    {
+      "Id": "/Users/macpro/Documents/gesCommandes/gesCommandes/wwwroot/lib/jquery-validation/dist/additional-methods.js",
+      "PackagePath": "staticwebassets/lib/jquery-validation/dist/additional-methods.js"
+    },
+    {
+      "Id": "/Users/macpro/Documents/gesCommandes/gesCommandes/wwwroot/lib/jquery-validation/dist/additional-methods.min.js",
+      "PackagePath": "staticwebassets/lib/jquery-validation/dist/additional-methods.min.js"
+    },
+    {
+      "Id": "/Users/macpro/Documents/gesCommandes/gesCommandes/wwwroot/lib/jquery-validation/dist/jquery.validate.js",
+      "PackagePath": "staticwebassets/lib/jquery-validation/dist/jquery.validate.js"
+    },
+    {
+      "Id": "/Users/macpro/Documents/gesCommandes/gesCommandes/wwwroot/lib/jquery-validation/dist/jquery.validate.min.js",
+      "PackagePath": "staticwebassets/lib/jquery-validation/dist/jquery.validate.min.js"
+    },
+    {
+      "Id": "/Users/macpro/Documents/gesCommandes/gesCommandes/wwwroot/lib/jquery/LICENSE.txt",
+      "PackagePath": "staticwebassets/lib/jquery/LICENSE.txt"
+    },
+    {
+      "Id": "/Users/macpro/Documents/gesCommandes/gesCommandes/wwwroot/lib/jquery/dist/jquery.js",
+      "PackagePath": "staticwebassets/lib/jquery/dist/jquery.js"
+    },
+    {
+      "Id": "/Users/macpro/Documents/gesCommandes/gesCommandes/wwwroot/lib/jquery/dist/jquery.min.js",
+      "PackagePath": "staticwebassets/lib/jquery/dist/jquery.min.js"
+    },
+    {
+      "Id": "/Users/macpro/Documents/gesCommandes/gesCommandes/wwwroot/lib/jquery/dist/jquery.min.map",
+      "PackagePath": "staticwebassets/lib/jquery/dist/jquery.min.map"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.build.gesCommandes.props",
+      "PackagePath": "build\\gesCommandes.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.gesCommandes.props",
+      "PackagePath": "buildMultiTargeting\\gesCommandes.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.gesCommandes.props",
+      "PackagePath": "buildTransitive\\gesCommandes.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.gesCommandes.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

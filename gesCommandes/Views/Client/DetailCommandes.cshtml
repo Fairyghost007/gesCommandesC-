@@ -1,0 +1,55 @@
+@using gesCommandes.Models
+@{
+    var commande = ViewBag.Commande as Commande;
+    var detailsCommande = ViewBag.DetailCommandes as List<DetailCommande>;
+}
+
+<div class="container">
+    <h2>Order Details</h2>
+
+    @if (commande != null)
+    {
+        <div class="order-info">
+            <p><strong>Order ID:</strong> @commande.Id</p>
+            <p><strong>Client:</strong> @ViewBag.ClientName</p>
+            <p><strong>Order Date:</strong> @commande.CreatedAt.ToString("d/M/y")</p>
+            <p><strong>Total Amount:</strong> @ViewBag.TotalMontant</p>
+        </div>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Quantity</th>
+                    <th>Unit Price</th>
+                    <th>Total Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (detailsCommande != null && detailsCommande.Any())
+                {
+                    @foreach (var detail in detailsCommande)
+                    {
+                        <tr>
+                            <td>@(detail.Produit?.Libelle ?? "Unknown")</td>
+                            <td>@detail.qteCommande</td>
+                            <td>@(detail.Produit?.Prix ?? 0)</td>
+                            <td>@detail.Prix</td>
+
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="4">No details found for this order.</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p>No order details found.</p>
+    }
+</div>

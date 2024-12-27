@@ -1,0 +1,137 @@
+@model Client
+
+@{
+    Layout = "_Layout";
+}
+
+<div class="w-full flex items-start justify-center">
+    <div class="max-w-4xl bg-white shadow-lg rounded-lg p-8 w-full h-fit">
+        <h4 class="text-2xl font-bold mb-6">Create Client</h4>
+        <hr class="mb-6" />
+
+        <form asp-action="Save" method="post" enctype="multipart/form-data" class="space-y-6" id="clientForm">
+            <!-- Validation Summary -->
+            <div asp-validation-summary="All" class="text-red-500"></div>
+
+            <!-- Client Fields -->
+            <div>
+                <label asp-for="Adresse" class="block text-sm font-medium text-gray-700 mb-1">Adresse</label>
+                <input asp-for="Adresse"
+                    class="w-full border border-gray-300 rounded-md p-2 focus:ring-blue-500 focus:border-blue-500" />
+                <span asp-validation-for="Adresse" class="text-red-500 text-sm"></span>
+            </div>
+
+            <input type="hidden" asp-for="Solde" value="0" />
+
+            <!-- Toggle for User Fields -->
+            <div class="flex items-center">
+                <h2 class="text-lg font-semibold mr-2">Add User</h2>
+                <label class="relative inline-flex cursor-pointer items-center">
+                    <input type="checkbox" id="creerCompte" name="creerCompte" class="peer sr-only" />
+                    <div
+                        class="peer h-6 w-11 rounded-full bg-gray-200 border relative after:absolute after:left-[2px] after:self-center after:h-5 after:w-5 after:rounded-full after:border-gray-300 after:bg-white after:transition-all after:content-[''] peer-checked:bg-green-600 peer-checked:after:translate-x-full peer-checked:after:border-white peer-focus:ring-4 peer-focus:ring-green-300 dark:peer-focus:ring-green-800 dark:bg-gray-700">
+                    </div>
+                </label>
+            </div>
+
+            <!-- User Fields -->
+            <div id="userFields" class="hidden space-y-4">
+                <h5 class="text-lg font-semibold mt-4">User Information</h5>
+                <div class="flex flex-row justify-between w-full gap-3">
+                    <div class="w-full">
+                        <label asp-for="user.Nom" class="block text-sm font-medium text-gray-700 mb-1">Nom</label>
+                        <input asp-for="user.Nom"
+                            class="w-full border border-gray-300 rounded-md p-2 focus:ring-blue-500 focus:border-blue-500" />
+                        <span asp-validation-for="user.Nom" class="text-red-500 text-sm"></span>
+                    </div>
+
+                    <div class="w-full">
+                        <label asp-for="user.Prenom" class="block text-sm font-medium text-gray-700 mb-1">Prenom</label>
+                        <input asp-for="user.Prenom"
+                            class="w-full border border-gray-300 rounded-md p-2 focus:ring-blue-500 focus:border-blue-500" />
+                        <span asp-validation-for="user.Prenom" class="text-red-500 text-sm"></span>
+                    </div>
+
+                    <div class="w-full">
+                        <label asp-for="user.Telephone"
+                            class="block text-sm font-medium text-gray-700 mb-1">Telephone</label>
+                        <input asp-for="user.Telephone"
+                            class="w-full border border-gray-300 rounded-md p-2 focus:ring-blue-500 focus:border-blue-500" />
+                        <span asp-validation-for="user.Telephone" class="text-red-500 text-sm"></span>
+                    </div>
+                </div>
+
+                <div class="flex flex-row justify-between w-full gap-3">
+                    <div class="w-full">
+                        <label asp-for="user.Login" class="block text-sm font-medium text-gray-700 mb-1">Login</label>
+                        <input asp-for="user.Login"
+                            class="w-full border border-gray-300 rounded-md p-2 focus:ring-blue-500 focus:border-blue-500" />
+                        <span asp-validation-for="user.Login" class="text-red-500 text-sm"></span>
+                    </div>
+
+                    <div class="w-full">
+                        <label asp-for="user.Password"
+                            class="block text-sm font-medium text-gray-700 mb-1">Password</label>
+                        <input asp-for="user.Password" type="password"
+                            class="w-full border border-gray-300 rounded-md p-2 focus:ring-blue-500 focus:border-blue-500" />
+                        <span asp-validation-for="user.Password" class="text-red-500 text-sm"></span>
+                    </div>
+                </div>
+
+
+
+
+
+                <div>
+                    <label asp-for="user.ImgFile" class="block text-sm font-medium text-greenMe mb-1">Upload
+                        Image</label>
+                    <input asp-for="user.ImgFile" type="file"
+                        class="block w-full text-sm text-greenMe border border-gray-300 rounded-md cursor-pointer bg-gray-50 focus:outline-none" />
+                    <span asp-validation-for="user.ImgFile" class="text-red-500 text-sm"></span>
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div>
+                <button type="submit" class="w-full bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600">
+                    Create
+                </button>
+            </div>
+        </form>
+
+        <div
+            class="mt-2 w-full bg-green-700 text-white py-2 px-4 rounded-md text-center hover:bg-green-900 cursor-pointer">
+            <a asp-action="Index" class="text-white text-center">
+                Back to List
+            </a>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        const checkbox = document.getElementById('creerCompte');
+        const userFields = document.getElementById('userFields');
+
+        function toggleUserFields() {
+            const userInputs = userFields.querySelectorAll('input, select');
+
+            if (checkbox.checked) {
+                userFields.classList.remove('hidden');
+                userInputs.forEach(input => {
+                    if (input.getAttribute('type') !== 'file') {
+                        input.setAttribute('required', 'required');
+                    }
+                });
+            } else {
+                userFields.classList.add('hidden');
+                userInputs.forEach(input => {
+                    input.removeAttribute('required');
+                });
+            }
+        }
+
+        toggleUserFields();
+        checkbox.addEventListener('change', toggleUserFields);
+    </script>
+}

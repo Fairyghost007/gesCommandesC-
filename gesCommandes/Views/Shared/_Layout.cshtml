@@ -1,0 +1,177 @@
+﻿@using Microsoft.AspNetCore.Identity;
+@using System.Security.Claims;
+@using gesCommandes.Enums;
+
+@{
+    var paniercount = ViewData["PanierCount"];
+    var client = ViewData["Client"] as Client ?? new Client { user = new User { Nom = "Unknown" } };
+    var currentUser = (ClaimsPrincipal)User; // Cast the User to ClaimsPrincipal
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"] - gesCommandes</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="/favicon_io/site.webmanifest">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="/css/output.css">
+    @* <link rel="stylesheet" href="css/output.css?v=@DateTime.Now.Ticks"> *@
+    <link rel="stylesheet" href="/css/site.css">
+    @RenderSection("stylesheets", required: false)
+</head>
+
+<body class=" bg-opacity-80 bg-custom-pattern bg-custom-size bg-custom-position w-full m-0 h-screen p-0" style="background-color: rgba(255,250,235,1);
+opacity: 1;
+background-image: radial-gradient(#243132 2px, rgba(255,250,235,1) 2px);
+background-size: 40px 40px;">
+    <nav class="border-gray-200 bg-greenMe flex items-center justify-between w-full m-0">
+        <div class=" flex items-center justify-center py-4 bg-green-600 w-auto">
+            <a href="@Url.Action("Index", "Home")" class="flex items-center ">
+                <span class="self-center text-xl font-semibold text-white p-1">GES_COMMANDES</span>
+            </a>
+        </div>
+        <div class="flex items-center justify-between gap-8 px-5 text-white ">
+            @if (currentUser.FindFirstValue(ClaimTypes.Role) == Role.CLIENT.ToString())
+            {
+                <a asp-action="CreateCommande" asp-controller="Client" asp-route-clientId="@client.Id"
+                    class="relative mr-3 flex items-center text-white hover:underline">
+                    <i class="fa-solid fa-cart-shopping text-2xl"></i>
+                    <span
+                        class="absolute top-0 right-0 transform translate-x-1/2 -translate-y-1/2 bg-red-500 text-xs text-white rounded-full px-1">
+                        @ViewData["PanierCount"]
+                    </span>
+                </a>
+
+            }
+            <div class="bg-yellow-50 rounded-full w-10 h-10">
+                @if (currentUser.FindFirstValue(ClaimTypes.Role) == Role.RS.ToString())
+                {
+                    <img src="@(currentUser.FindFirstValue(ClaimTypes.UserData) != null ? currentUser.FindFirstValue(ClaimTypes.UserData) : "/imgs/users/default2.png")"
+                        alt="No image Here" class="object-fit w-full h-full rounded-full" />
+                }
+                else if (client.user != null && client.user.Id != null)
+                {
+                    <img src="@(client.user.ImgPath != null ? client.user.ImgPath : "/imgs/users/default2.png")"
+                        alt="No image Here" class="object-fit w-full h-full rounded-full" />
+                }
+                else
+                {
+                    <img src="/imgs/users/default2.png" alt="No image Here" class="object-fit w-full h-full rounded-full" />
+                }
+            </div>
+
+        </div>
+    </nav>
+
+    <div class="flex w-full m-0" style="height: calc(100vh - 65px);">
+        <aside class="bg-greenMe p-6  sticky top-0 left-0 bottom-0  flex justify-between flex-col">
+            <ul class="space-y-2 font-medium">
+                @if (currentUser.FindFirstValue(ClaimTypes.Role) == Role.CLIENT.ToString())
+                {
+                    <li>
+                        <a href="@Url.Action("Commandes", "Client", new { userId = currentUser.FindFirstValue(ClaimTypes.NameIdentifier) })"
+                            class="flex items-center p-2 rounded-lg text-white hover:bg-gray-700 group">
+                            <i class="fa-solid fa-user-group w-5 h-5"></i>
+                            <span class="ms-3">Commandes</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="@Url.Action("Index", "Produit")"
+                            class="flex items-center p-2 rounded-lg text-white hover:bg-gray-700 group">
+                            <i class="fa-solid fa-box w-5 h-5"></i>
+                            <span class="ms-3">Produits</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a asp-action="Paiements" asp-controller="Client" asp-route-clientId="@client.Id"
+                            class="lex items-center p-2 rounded-lg text-white hover:bg-gray-700 group">
+                            <i class="fa-solid fa-money-check w-5 h-5"></i>
+                            Paiements
+                        </a>
+                    </li>
+                }
+                @if (currentUser.FindFirstValue(ClaimTypes.Role) == Role.RS.ToString())
+                {
+                    <li>
+                        <a href="@Url.Action("Index", "Client" , new { userId = currentUser.FindFirstValue(ClaimTypes.NameIdentifier) })"
+                            class="flex items-center p-2 rounded-lg text-white hover:bg-gray-700 group">
+                            <i class="fa-solid fa-users w-5 h-5"></i>
+                            <span class="ms-3">Clients</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("Index", "Commande")"
+                            class="flex items-center p-2 rounded-lg text-white hover:bg-gray-700 group">
+                            <i class="fa-solid fa-user-group w-5 h-5"></i>
+                            <span class="ms-3">Commandes</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("Index", "Produit")"
+                            class="flex items-center p-2 rounded-lg text-white hover:bg-gray-700 group">
+                            <i class="fa-solid fa-box w-5 h-5"></i>
+                            <span class="ms-3">Produits</span>
+                        </a>
+                    </li>
+                }
+            </ul>
+            <a href="@Url.Action("Logout", "User")"
+                class="text-white py-3 px-5 rounded-lg bg-green-600 hover:underline text-center">Logout</a>
+        </aside>
+
+        <main class="flex p-4 w-full " style="background-color: #e5e7eb;
+opacity: 1;
+background-image:  radial-gradient(#243132 1.05px, transparent 1.05px), radial-gradient(#243132 1.05px, #e5e7eb 1.05px);
+background-size: 42px 42px;
+background-position: 0 0,21px 21px;">
+            @RenderBody()
+        </main>
+    </div>
+
+    @* <footer class="border-top footer text-muted text-center py-4 m-0 bg-greenMe text-white">
+        <div>&copy; 2024 - gesCommandes - <a href="@Url.Action("Privacy", "Home")" class="hover:underline">Privacy</a>
+        </div>
+    </footer> *@
+
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+    @* <script>
+        const checkbox = document.getElementById('creerCompte');
+        const userFields = document.getElementById('userFields');
+
+        function toggleUserFields() {
+            const userInputs = userFields.querySelectorAll('input, select');
+
+            if (checkbox.checked) {
+                userFields.classList.remove('hidden');
+                userInputs.forEach(input => input.setAttribute('required', 'required'));
+            } else {
+                userFields.classList.add('hidden');
+                userInputs.forEach(input => input.removeAttribute('required'));
+            }
+        }
+
+        // Initialize on load
+        toggleUserFields();
+
+        // Attach change event listener
+        checkbox.addEventListener('change', toggleUserFields);
+    </script> *@
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js"></script>
+    @RenderSection("scripts", required: false)
+</body>
+
+</html>

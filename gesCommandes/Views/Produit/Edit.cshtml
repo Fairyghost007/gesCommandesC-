@@ -1,0 +1,53 @@
+@model gesCommandes.Models.Produit
+
+@{
+    Layout = "_Layout";
+}
+
+<div class="container mx-auto p-4">
+    <div class="card bg-greenMe border-2 border-green-600 rounded-xl p-4 shadow-lg">
+        <h4 class="text-center text-xl font-bold text-green-500 mt-4">Edit Produit</h4>
+        <hr class="my-4 border-green-500" />
+
+        <form asp-action="Edit" class="space-y-4">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="Libelle" class="block text-white font-semibold"></label>
+                <input asp-for="Libelle" class="form-control w-full px-4 py-2 bg-white text-greenMe rounded-md" />
+                <span asp-validation-for="Libelle" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Prix" class="block text-white font-semibold"></label>
+                <input asp-for="Prix" class="form-control w-full px-4 py-2 bg-white text-greenMe rounded-md" />
+                <span asp-validation-for="Prix" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="QteStock" class="block text-white font-semibold"></label>
+                <input asp-for="QteStock" class="form-control w-full px-4 py-2 bg-white text-greenMe rounded-md" />
+                <span asp-validation-for="QteStock" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <img src="@Model.ImgPath" alt="" class="w-48 h-48 rounded-md">
+                @* <div class="flex items-center border border-gray-300 rounded-lg">
+                    <input asp-for="ImgFile" type="file"
+                        class="flex-1  block w-full text-sm rounded-lg text-gray-500 border-0 focus:ring-0 cursor-pointer" />
+                </div>
+                <span asp-validation-for="ImgFile" class="text-danger"></span> *@
+            </div>
+            <input type="hidden" asp-for="Id" />
+            <input type="hidden" asp-for="ImgFile" />
+            <input type="hidden" asp-for="ImgPath" />
+            <div class="form-group">
+                <input type="submit" value="Save"
+                    class="btn w-full btn-primary px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-500 transition duration-300" />
+            </div>
+            <div
+                class=" w-full flex justify-center items-center  btn-primary px-4 py-2 bg-green-700 text-white rounded-md hover:bg-green-500 transition duration-300 text center">
+                <a asp-action="Index" class="btn w-full flex justify-center items-center">cancel</a>
+            </div>
+        </form>
+    </div>
+</div>

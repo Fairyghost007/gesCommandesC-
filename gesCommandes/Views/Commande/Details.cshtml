@@ -1,0 +1,33 @@
+@model gesCommandes.Models.Commande
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "_Layout";
+}
+
+
+<div class="rounded-lg w-full h-auto p-5">
+    <div class="flex justify-between items-center mb-6">
+        <h1 class="text-2xl font-bold text-green-500">Commande Details</h1>
+    </div>
+    <table class="w-full bg-white rounded-lg shadow-md overflow-hidden">
+        <thead class="bg-green-500 text-white">
+            <tr>
+                <th class="py-2 px-4">ID</th>
+                <th class="py-2 px-4">Montant</th>
+                <th class="py-2 px-4">Client</th>
+                <th class="py-2 px-4">Livreur</th>
+                <th class="py-2 px-4">Paiement</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="text-center">
+                <td class="border-t py-2 px-4">@Html.DisplayFor(model => model.Id)</td>
+                <td class="border-t py-2 px-4">@Html.DisplayFor(model => model.montantCommande)</td>
+                <td class="border-t py-2 px-4">@Html.DisplayFor(model => model.clientId)</td>
+                <td class="border-t py-2 px-4">@(Model.livreurId.HasValue ? Model.livreurId.ToString() : "Not assign")</td>
+                <td class="border-t py-2 px-4">@(Model.paiementId.HasValue ? Model.paiementId.ToString() : "Not done")</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

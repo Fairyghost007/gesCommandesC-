@@ -1,0 +1,107 @@
+@{
+    var client = ViewData["Client"] as Client ?? new Client { user = new User { Nom = "Unknown" } };
+    var panier = ViewData["Panier"] as List<DetailCommande> ?? new List<DetailCommande>();
+    var total = Math.Round((ViewData["Total"] as double? ?? 0), 2);
+}
+
+<div class="bg-gradient-to-br from-green-100 to-green-300  py-8 w-full overflow-hidden rounded-lg" style="height: calc(100vh - 100px)">
+    <div class="container mx-auto px-4 w-full ">
+        <h1 class="text-2xl font-semibold mb-4">Shopping Cart for @client.user.Nom</h1>
+        <div class="flex flex-col md:flex-row gap-4  ">
+            <!-- Cart Items -->
+            <div class="md:w-3/4 w-full ">
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <table class="w-full border-collapse">
+                        <thead>
+                            <tr>
+                                <th class="text-left font-semibold py-2">Product</th>
+                                <th class="text-left font-semibold py-2">Price</th>
+                                <th class="text-left font-semibold py-2">Quantity</th>
+                                <th class="text-left font-semibold py-2">Total</th>
+                                <th class="text-left font-semibold py-2">Action</th>
+                            </tr>
+                        </thead>
+                        @if (panier != null && panier.Any())
+                        {
+                            <tbody>
+                                @foreach (var detail in panier)
+                                {
+                                    <tr class="border-t">
+                                        <td class="py-4">
+                                            <div class="flex items-center">
+                                                <img class="h-16 w-16 mr-4 object-cover rounded-md"
+                                                    src="@detail.Produit.ImgPath" alt="@detail.Produit.Libelle">
+                                                <span class="font-semibold ml-2">@detail.Produit.Libelle</span>
+                                            </div>
+                                        </td>
+                                        <td class="py-4">€@detail.Produit.Prix</td>
+                                        <td class="py-4">
+                                            <form
+                                                action="@Url.Action("UpdateQuantity", "Client", new { clientId = @client.Id, produitId = @detail.ProduitId })"
+                                                method="POST" class="flex items-center">
+                                                <button type="submit" name="action" value="decrement"
+                                                    class="border rounded-md py-2 px-4 mr-2">-</button>
+                                                <span class="text-center w-12">@detail.qteCommande</span>
+                                                <button type="submit" name="action" value="increment"
+                                                    class="border rounded-md py-2 px-4 ml-2">+</button>
+                                            </form>
+
+
+
+                                        </td>
+                                        <td class="py-4">€@(string.Format("{0:F2}", detail.Produit.Prix * detail.qteCommande))
+                                        </td>
+                                        <td class="py-4">
+                                            <form action="@Url.Action("RemoveFromPanier", "Client")" method="POST">
+                                                <input type="hidden" name="produitId" value="@detail.ProduitId">
+                                                <button type="submit"
+                                                    class="bg-red-500 text-white py-2 px-4 rounded-lg hover:bg-red-600">Remove</button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        }
+                        else
+                        {
+                            <tbody>
+                                <tr>
+                                    <td colspan="7" class="text-center py-4 text-gray-600">No orders found for this client.
+                                    </td>
+                                </tr>
+                            </tbody>
+                        }
+                    </table>
+                </div>
+            </div>
+
+            <!-- Summary Section -->
+            <div class="md:w-1/4 w-3/5">
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h2 class="text-lg font-semibold mb-4">Summary</h2>
+                    <div class="flex justify-between mb-2 gap-8">
+                        <span>Subtotal</span>
+                        <span>€@total</span>
+                    </div>
+                    @* <div class="flex justify-between mb-2">
+                        <span>Taxes</span>
+                        <span>€@(total * 0.2)</span>
+                    </div> *@
+                    <div class="flex justify-between mb-2 gap-8">
+                        <span>Shipping</span>
+                        <span>€5.00</span>
+                    </div>
+                    <hr class="my-2">
+                    <div class="flex justify-between mb-2">
+                        <span class="font-semibold">Total</span>
+                        <span class="font-semibold">€@(total)</span>
+                    </div>
+                    <form action="@Url.Action("SaveCommande", "Client")" method="POST">
+                        <button type="submit"
+                            class="bg-green-500 text-white py-2 px-4 rounded-lg mt-4 w-full hover:bg-blue-600">Checkout</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
